@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iris 데이터 예측 실습</title>
+    <style>
+        body {
+            background-color: #D4A3AE;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #FFFFFF;
+        }
+        form {
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 110px;
+            text-align: right;
+        }
+        .submit_btn{
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>플라스크 테스트</h1>
+
+    <form action="" method="post">
+        <label for="">sepal_length</label>
+        <input type = "text" name ="sl"> <br>
+        <label for="">sepal_width</label>
+        <input type = "text" name ="sw"><br>
+        <label for="">petal_length</label>
+        <input type = "text" name ="pl"><br>
+        <label for="">petal_width</label>
+        <input type = "text" name ="pw"><br>
+        <button>예측실행</button>
+    </form>
+
+    <h2>{{ predict }}</h2>
+    <!-- flask_ex\static\flower1.jpg-->
+    <img src="{{ img_path }}", alt="예측 이미지">
+    <a href="https://naver.com" target="blank">네이버</a>
+</body>
+</html>

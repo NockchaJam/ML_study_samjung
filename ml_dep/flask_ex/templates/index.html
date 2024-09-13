@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iris 데이터 예측 실습</title>
+    <style>
+        body {
+            background-color: #D4A3AE;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #FFFFFF;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 150px;
+        }
+        input[type="submit"], button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        table {
+            margin: 20px auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        img {
+            margin-top: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iris 품종 예측 실습</h1>
+
+    <!-- 입력 폼 -->
+    <form action="" method="post">
+        <label for="sl">Sepal Length</label>
+        <input type="number" name="sl" step="0.01" required> <br>
+        <label for="sw">Sepal Width</label>
+        <input type="number" name="sw" step="0.01" required><br>
+        <label for="pl">Petal Length</label>
+        <input type="number" name="pl" step="0.01" required><br>
+        <label for="pw">Petal Width</label>
+        <input type="number" name="pw" step="0.01" required><br>
+        <button type="submit">예측 실행</button>
+    </form>
+
+    <!-- 예측 결과 테이블 -->
+    {% if predict %}
+        <h2>예측 결과</h2>
+        <table border="1">
+            <tr>
+                <th>입력값</th>
+                <th>입력된 값</th>
+            </tr>
+            <tr>
+                <td>Sepal Length</td>
+                <td>{{ sl }}</td>
+            </tr>
+            <tr>
+                <td>Sepal Width</td>
+                <td>{{ sw }}</td>
+            </tr>
+            <tr>
+                <td>Petal Length</td>
+                <td>{{ pl }}</td>
+            </tr>
+            <tr>
+                <td>Petal Width</td>
+                <td>{{ pw }}</td>
+            </tr>
+            <tr>
+                <th>예측된 품종</th>
+                <td>{{ predict }}</td>
+            </tr>
+        </table>
+        
+        <!-- 예측 이미지 -->
+        <img src="{{ img_path }}" alt="예측 이미지">
+    {% endif %}
+</body>
+</html>
