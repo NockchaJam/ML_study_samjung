@@ -1,1 +1,1 @@
-# ml_web_ex
+# ml_study_samjung
